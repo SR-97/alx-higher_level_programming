@@ -1,0 +1,14 @@
+#!/usr/bin/python3
+import os
+import sys
+
+if __name__ == "__main__":
+    pyfile = os.getenv("PYFILE")
+    if not pyfile:
+        print("Missing environment variable PYFILE")
+        sys.exit(1)
+
+    output_file = pyfile + "c"
+    os.system(f"python3 -m compileall {pyfile}")
+    print(f"Compiling {pyfile} ...")
+    os.rename("__pycache__/" + output_file, output_file)
