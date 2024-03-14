@@ -1,11 +1,8 @@
+#!/usr/bin/python3
 def islower(c):
-    """
-    Checks if the given character is lowercase.
-
-    Args:
-        c: A character (string of length 1) to be checked.
-
-    Returns:
-        True if c is lowercase, False otherwise.
-    """
-    return 'a' <= c <= 'z'
+    if ord(c) >= 65 and ord(c) <= 90:
+        return False
+    elif ord(c) >= 97 and ord(c) <= 122:
+        return True
+    else:
+        return False
